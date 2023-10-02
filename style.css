@@ -1,0 +1,41 @@
+/* Style the book grid container */
+#bookList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Adjust the gap between cards as needed */
+    justify-content: space-between; /* Distribute cards evenly in the container */
+    padding: 20px; /* Add padding to the container to center-align the cards */
+  }
+  
+  /* Style each book card */
+  .book-item {
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: calc(25% - 20px); /* Set a fixed width for each card (3 cards per row) */
+    background-color: #fff;
+    box-sizing: border-box; /* Include padding and border in the width calculation */
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  /* Style the book image */
+  .book-image img {
+    width: 100%; /* Set the image width to 100% of the container */
+    height: 200px; /* Set a fixed height for all images (adjust as needed) */
+    object-fit: cover; /* Maintain aspect ratio and cover the container */
+    display: block;
+    margin: 0 auto; /* Center the image horizontally */
+  }
+  
+  /* Style book details (title, author, etc.) */
+  h2 {
+    font-size: 1.2em;
+    margin-top: 0;
+  }
+  
+  p {
+    margin: 5px 0;
+  }
+  
+  /* Add more styles as needed */
+  
