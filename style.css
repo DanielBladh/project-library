@@ -1,3 +1,93 @@
+.nav-ish {
+  margin-left: 20px;
+}
+
+.nav-ish label {
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.nav-ish button {
+  margin-right: 10px;
+  background-image: linear-gradient(#42A1EC, #0070C9);
+  border: 1px solid #0077CC;
+  border-radius: 4px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-size: 17px;
+  font-weight: 400;
+  min-width: 30px;
+  overflow: visible;
+  padding: 4px 15px;
+  text-align: center;
+}
+
+.nav-ish select {
+  margin-right: 10px;
+  background-image: linear-gradient(#42A1EC, #0070C9);
+  border: 1px solid #0077CC;
+  border-radius: 4px;
+  box-sizing: border-box;
+  color: #303030;
+  cursor: pointer;
+  font-size: 17px;
+  font-weight: 400;
+  letter-spacing: -.022em;
+  line-height: 1.47059;
+  min-width: 30px;
+  overflow: visible;
+  padding: 4px 15px;
+  text-align: left;
+}
+
+.nav-ish button:disabled {
+  cursor: default;
+  opacity: .3;
+}
+
+.nav-ish button:hover {
+  background-image: linear-gradient(#51A9EE, #147BCD);
+  border-color: #1482D0;
+  text-decoration: none;
+}
+
+.nav-ish button:active {
+  background-image: linear-gradient(#3D94D9, #0067B9);
+  border-color: #006DBC;
+  outline: none;
+}
+
+.nav-ish button:focus {
+  box-shadow: rgba(131, 192, 253, 0.5) 0 0 0 3px;
+  outline: none;
+}
+
+/* Style the label and select elements */
+.nav-ish label {
+  margin-right: 5px;
+}
+
+.nav-ish select {
+  margin-right: 10px;
+}
+
+#searchInput {
+  border: 1px solid #0077CC;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 17px;
+  font-weight: 400;
+  min-width: 30px;
+  overflow: visible;
+  padding: 4px 15px;
+  text-align: left;
+}
+
+.searchIcon {
+  margin-right: 5px;
+}
+
 /* Style the book grid container */
 #bookList {
     display: flex;
@@ -27,7 +117,7 @@
     margin: 0 auto; /* Center the image horizontally */
   }
   
-  /* Style book details (title, author, etc.) */
+
   h2 {
     font-size: 1.2em;
     margin-top: 0;
@@ -37,5 +127,5 @@
     margin: 5px 0;
   }
   
-  /* Add more styles as needed */
+
   

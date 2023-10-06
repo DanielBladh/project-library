@@ -51,7 +51,7 @@ const books = [
     rating: 4,
     description:
       "Narrated by the teenage Holden Caulfield, the novel explores themes of alienation and the search for authenticity.",
-    image: "./books-images/unknown.jpg",
+    image: "./books-images/the-catcher-in-the-rye.webp",
   },
   {
     title: "The Hobbit",
@@ -101,7 +101,7 @@ const books = [
     rating: 4.3,
     description:
       "A psychological horror novel that tells the story of the Torrance family's terrifying experiences at the haunted Overlook Hotel.",
-    image: "./books-images/unknown.jpg",
+    image: "./books-images/the-shining.jpeg",
   },
   {
     title: "The Chronicles of Narnia: The Lion, the Witch and the Wardrobe",
@@ -121,7 +121,7 @@ const books = [
     rating: 3.8,
     description:
       "A gripping mystery thriller that follows Harvard symbologist Robert Langdon as he unravels the secrets of the Da Vinci Code.",
-    image: "./books-images/unknown.jpg",
+    image: "./books-images/the-da-vinci-code.jpg",
   },
   {
     title: "The Alchemist",
@@ -131,7 +131,7 @@ const books = [
     rating: 4.25,
     description:
       "A philosophical novel that tells the story of Santiago, a shepherd boy, on his quest to discover his personal legend.",
-    image: "./books-images/unknown.jpg",
+    image: "./books-images/the-alchemist.jpg",
   },
   {
     title: "The Hunger Games",
@@ -141,7 +141,7 @@ const books = [
     rating: 4.3,
     description:
       "In a dystopian future, Katniss Everdeen becomes a symbol of rebellion when she volunteers to take her sister's place in the brutal Hunger Games.",
-    image: "./books-images/unknown.jpg",
+    image: "./books-images/the-hunger-games.jpg",
   },
   {
     title: "The Girl with the Dragon Tattoo",
@@ -151,7 +151,7 @@ const books = [
     rating: 4.1,
     description:
       "A gripping mystery novel featuring investigative journalist Mikael Blomkvist and the enigmatic hacker Lisbeth Salander.",
-    image: "./books-images/unknown.jpg",
+    image: "./books-images/The-Girl-with-the-Dragon-Tattoo.jpg",
   },
   {
     title: "The Road",
@@ -161,7 +161,7 @@ const books = [
     rating: 4,
     description:
       "Set in a post-apocalyptic world, it follows a father and son's harrowing journey to survive and find safety.",
-    image: "./books-images/unknown.jpg",
+    image: "./books-images/the-road.jpg",
   },
   {
     title: "The Hitchhiker's Guide to the Galaxy",
@@ -171,7 +171,7 @@ const books = [
     rating: 4.35,
     description:
       "A comedic science fiction series that follows the misadventures of Arthur Dent after Earth's destruction.",
-    image: "./books-images/unknown.jpg",
+    image: "./books-images/the-hitchhiker.jpg",
   },
   {
     title: "The Giver",
@@ -181,7 +181,7 @@ const books = [
     rating: 4.12,
     description:
       "A dystopian novel set in a seemingly perfect society where young Jonas discovers the dark truth beneath the surface.",
-    image: "./books-images/unknown.jpg",
+    image: "./books-images/the-giver.jpg",
   },
 ];
 
@@ -294,6 +294,79 @@ genreFilterSelect.addEventListener("change", () => {
     // Filter books by the selected genre
     const filteredBooks = filterBooksByGenre(books, selectedGenre);
     displayBooks(filteredBooks);
+  }
+});
+
+// Sorting by rating in ascending order
+function sortByRatingAscending() {
+  return books.slice().sort((a, b) => a.rating - b.rating);
+}
+
+// Sorting by rating in descending order
+function sortByRatingDescending() {
+  return books.slice().sort((a, b) => b.rating - a.rating);
+}
+
+// Define a variable to keep track of the current sorting order
+let isDescending = false;
+
+// Function to toggle between sorting by rating in ascending and descending order
+function toggleSortByRating() {
+  if (isDescending) {
+    // Sorting by rating in ascending order
+    const sortedBooks = sortByRatingAscending();
+    displayBooks(sortedBooks);
+    isDescending = false;
+  } else {
+    // Sorting by rating in descending order
+    const sortedBooks = sortByRatingDescending();
+    displayBooks(sortedBooks);
+    isDescending = true;
+  }
+}
+
+// Add an event listener to the sorting button
+const sortRatingButton = document.querySelector("#sortRatingButton");
+
+sortRatingButton.addEventListener("click", toggleSortByRating);
+
+// Function to search for books by title or author
+function searchBooks(query) {
+  query = query.toLowerCase(); // Convert the query to lowercase for case-insensitive search
+
+  const searchResults = books.filter(
+    (book) =>
+      book.title.toLowerCase().includes(query) ||
+      book.author.toLowerCase().includes(query)
+  );
+
+  return searchResults;
+}
+
+// Function to handle the search button click
+function handleSearch() {
+  const searchInput = document.querySelector("#searchInput");
+  const query = searchInput.value.trim(); // Get the trimmed user input
+
+  if (query === "") {
+    // If the search input is empty, display all books
+    displayBooks(books);
+  } else {
+    // Perform the search and display the results
+    const searchResults = searchBooks(query);
+    displayBooks(searchResults);
+  }
+}
+
+// Add an event listener to the search button
+const searchButton = document.querySelector("#searchButton");
+searchButton.addEventListener("click", handleSearch);
+
+// Add an event listener to the search input to handle pressing Enter
+const searchInput = document.querySelector("#searchInput");
+searchInput.addEventListener("keypress", function (e) {
+  if (e.key === "Enter") {
+    handleSearch();
   }
 });
 
