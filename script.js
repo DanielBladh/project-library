@@ -1,7 +1,3 @@
-/*Here we have created two different arrays that you can work with if you want.
-If you choose to create your own arrays with elements, just make sure that some
-of the properties make sense to filter on, and some to sort on.*/
-
 const books = [
   {
     title: "The Great Gatsby",
